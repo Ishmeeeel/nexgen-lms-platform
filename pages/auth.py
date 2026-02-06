@@ -1,3 +1,4 @@
+
 import streamlit as st
 from services.supabase_client import get_client
 
