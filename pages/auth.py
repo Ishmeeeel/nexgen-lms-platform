@@ -27,7 +27,7 @@ def show_signup():
     if st.button("Sign up"):
         supabase = get_client()
         supabase.auth.sign_up({"email": email, "password": password})
-        st.info("Check your email to confirm, then sign in.")
+        st.info("Account created. Check your email to confirm.")
 
 mode = st.radio("Auth mode", ["Sign in","Sign up"], horizontal=True)
 show_login() if mode=="Sign in" else show_signup()
@@ -38,3 +38,4 @@ if "user" in st.session_state:
         get_client().auth.sign_out()
         st.session_state.pop("user", None)
         st.rerun()
+
